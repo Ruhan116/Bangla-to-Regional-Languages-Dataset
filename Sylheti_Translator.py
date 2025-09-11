@@ -31,6 +31,22 @@ def translate_bangla_to_sylheti(row):
     - Do not add any metadata, formatting, or extra information
     - If you cannot translate a specific word, keep it as is in the original form
 
+    Here are some examples of Bangla to Sylheti translations:
+    Bangla: আপনি কি নিয়মিত স্ক্যান করেন?
+    Sylheti: আফনে কিতা রেগুলার স্ক্যান খরইননি?
+
+    Bangla: কোথায় কোচিং করেন?
+    Sylheti: কোনানো কোচিং খরইন?
+
+    Bangla: ডাল সিদ্ধ হয়েছে?
+    Sylheti: ডাইল সিদ্ধ অইছেনি?
+
+    Bangla: এই যে মিয়া, কি নিয়ে যাও?
+    Sylheti: ওবা, কিতা লইয়া যাইরায়?
+
+    Bangla: আপনি কি নিয়মিত স্ক্যান করেন?
+    Sylheti: আফনে কিতা রেগুলার স্ক্যান খরইননি?
+
     Bangla text to translate:
     {bangla_text}
 

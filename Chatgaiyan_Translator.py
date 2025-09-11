@@ -30,6 +30,22 @@ def translate_bangla_to_chatgaiyan(row):
     - Do not add any metadata, formatting, or extra information
     - If you cannot translate a specific word, keep it as is in the original form
 
+    Here are some examples of Bangla to Chittagonian translations:
+    Bangla: খালু, গ্রামের বাড়ি যাবেন কবে
+    Chittagonian: অহালু, গ্রামর বাড়িত হত্তে যাইবেন?
+
+    Bangla: আপনি কি নিয়মিত জল খান?
+    Chittagonian: অনে কি পইত্তেন পানি হন না?
+
+    Bangla: জুম্মার পর যাব।
+    Chittagonian: জুমর পর যাইয়ুম।
+
+    Bangla: পালং শাক খুব পছন্দ
+    Chittagonian: পালংশাক বেশি গম লাগে দে
+
+    Bangla: বাঙালি নানা-নানীরা কি করেন?
+    Chittagonian: বাআলর নানানানী অলে কি গরে দে?
+
     Bangla text to translate:
     {bangla_text}
 
