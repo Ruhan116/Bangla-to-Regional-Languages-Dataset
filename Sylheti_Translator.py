@@ -69,10 +69,11 @@ def extract_after_first_backslash(path):
 def generate_sylhetti(csv_path, num_lines=None):
     with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)  # Skip the header row
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
-            append_csv_line(r'UwU_Sylhet\\' + path, translate_bangla_to_sylheti(row))
+            append_csv_line(r'Translated_Sylhet\\' + path, translate_bangla_to_sylheti(row))
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
@@ -80,4 +81,4 @@ def generate_sylhetti(csv_path, num_lines=None):
 
 if __name__ == "__main__":
     # test_gemini_api()
-    generate_sylhetti(r'BangaCHQ\train.csv', num_lines=5)
+    generate_sylhetti(r'Split_Dataset\train0.csv')

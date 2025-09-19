@@ -68,6 +68,7 @@ def extract_after_first_backslash(path):
 def generate_chatgaiyan(csv_path, num_lines=None):
     with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)  # Skip the header row
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
