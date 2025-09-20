@@ -81,4 +81,5 @@ def generate_sylhetti(csv_path, num_lines=None):
 
 if __name__ == "__main__":
     # test_gemini_api()
-    generate_sylhetti(r'Split_Dataset\train0.csv')
+    generate_sylhetti(r'Split_Dataset\train4.csv')
+    
