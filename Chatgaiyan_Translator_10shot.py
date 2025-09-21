@@ -1,11 +1,13 @@
+
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 import csv
+import time
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY_2")
 
 def append_csv_line(csv_path, row):
     dir_name = os.path.dirname(csv_path)
@@ -81,16 +83,30 @@ def extract_after_first_backslash(path):
     return path
 
 def generate_chatgaiyan(csv_path, num_lines=None):
+    requests_this_minute = 0
+    minute_window_start = time.time()
     with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         next(reader)  # Skip the header row
         count = 0
         for row in reader:
+            # Rate limiting: max 10 requests per minute
+            now = time.time()
+            if requests_this_minute >= 10:
+                elapsed = now - minute_window_start
+                if elapsed < 60:
+                    time_to_wait = 60 - elapsed
+                    print(f"Rate limit reached. Sleeping for {time_to_wait:.1f} seconds...")
+                    time.sleep(time_to_wait)
+                # Reset for next window
+                requests_this_minute = 0
+                minute_window_start = time.time()
             path = extract_after_first_backslash(csv_path)
             append_csv_line('Translated_Chatgaiyan_10_Shot/' + path, translate_bangla_to_chatgaiyan(row))
+            requests_this_minute += 1
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
 
 if __name__ == "__main__":
-    generate_chatgaiyan(r'BangaCHQ\train.csv', num_lines=5)
+    generate_chatgaiyan(r'Split_Dataset\train0.csv')
