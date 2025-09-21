@@ -15,7 +15,6 @@ def append_csv_line(csv_path, row):
         writer = csv.writer(csvfile)
         writer.writerow(row)
 
-
 def translate_bangla_to_sylheti(row):
     if len(row) < 2:
         raise ValueError("Row must have at least two elements: id and bangla_text")
