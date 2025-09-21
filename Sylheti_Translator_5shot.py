@@ -73,7 +73,7 @@ def generate_sylhetti(csv_path, num_lines=None):
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
-            append_csv_line(r'Translated_Sylhet\\' + path, translate_bangla_to_sylheti(row))
+            append_csv_line(r'Translated_Sylhet_5_Shot\\' + path, translate_bangla_to_sylheti(row))
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
