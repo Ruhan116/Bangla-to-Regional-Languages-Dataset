@@ -31,6 +31,21 @@ def translate_bangla_to_chatgaiyan(row):
     - If you cannot translate a specific word, keep it as is in the original form
 
     Here are some examples of Bangla to Chittagonian translations:
+    Bangla: নতুন কোন জায়গায় ঘুরতে যাও?
+    Chittagonian: নতুন হন জাগাত ঘুইত্তু যন দে?
+
+    Bangla: পটুয়াখালির দ্বীপে কি আছে?
+    Chittagonian: পটুয়াহালির দ্বীপুত কি আছে দে?
+
+    Bangla: কোন সময় বাজার ভালো?
+    Chittagonian: হন সমত বাজার ঠিক থাকে দে?
+
+    Bangla: মা পিঠা বানাচ্ছেন।
+    Chittagonian: মা পিডে বানার ।
+
+    Bangla: মায়ের পাশে দাঁড়িয়ে, প্রতিটা স্টেপ নোট করে
+    Chittagonian: মার ডাগদি তিয়েইয়েরে, পইত্তেক স্টেপ নোট গরি
+
     Bangla: খালু, গ্রামের বাড়ি যাবেন কবে
     Chittagonian: অহালু, গ্রামর বাড়িত হত্তে যাইবেন?
 
@@ -72,7 +87,7 @@ def generate_chatgaiyan(csv_path, num_lines=None):
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
-            append_csv_line('UwU_Chatgaiyan/' + path, translate_bangla_to_chatgaiyan(row))
+            append_csv_line('Translated_Chatgaiyan/' + path, translate_bangla_to_chatgaiyan(row))
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
