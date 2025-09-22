@@ -62,4 +62,4 @@ def generate_chatgaiyan(csv_path, num_lines=None):
                 break
 
 if __name__ == "__main__":
-    generate_chatgaiyan(r'Split_Dataset\train0.csv')
+    generate_chatgaiyan(r'Split_Dataset\train3.csv')
