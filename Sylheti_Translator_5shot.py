@@ -5,7 +5,7 @@ import csv
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY_4")
 
 def append_csv_line(csv_path, row):
     dir_name = os.path.dirname(csv_path)
@@ -81,5 +81,5 @@ def generate_sylhetti(csv_path, num_lines=None):
 
 if __name__ == "__main__":
     # test_gemini_api()
-    generate_sylhetti(r'Split_Dataset\train4.csv')
+    generate_sylhetti(r'Split_Dataset\train3.csv')
     
