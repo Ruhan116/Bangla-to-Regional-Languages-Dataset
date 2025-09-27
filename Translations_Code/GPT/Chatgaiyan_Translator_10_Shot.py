@@ -99,4 +99,4 @@ def generate_chatgaiyan(csv_path, num_lines=None):
                 break
 
 if __name__ == "__main__":
-    generate_chatgaiyan(r'D:\Thesis\BLP\Bangla-to-Regional-Languages-Dataset\BangaCHQ\train.csv')
+    generate_chatgaiyan(r'D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\BangaCHQ\\train.csv')

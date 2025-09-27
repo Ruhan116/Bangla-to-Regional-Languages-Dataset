@@ -76,11 +76,11 @@ def generate_sylheti(csv_path, num_lines=None):
                 requests_this_minute = 0
                 minute_window_start = time.time()
             path = extract_after_first_backslash(csv_path)
-            append_csv_line('Translated_Sylhet_5_Shot/' + path, translate_bangla_to_sylheti(row))
+            append_csv_line('Translated_Sylhet_0_Shot/' + path, translate_bangla_to_sylheti(row))
             requests_this_minute += 1
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
 
 if __name__ == "__main__":
-    generate_sylheti(r'D:\Thesis\BLP\Bangla-to-Regional-Languages-Dataset\BangaCHQ\train.csv')
+    generate_sylheti(r'D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\BangaCHQ\\train.csv')
