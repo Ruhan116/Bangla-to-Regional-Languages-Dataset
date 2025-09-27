@@ -225,9 +225,9 @@ def get_output_prefix(csv_path):
     filename = os.path.basename(csv_path)
     # Remove .csv extension
     name_without_ext = os.path.splitext(filename)[0]
-
-    prefix = name_without_ext
-    return prefix
+    parts = name_without_ext.split('_')
+    prefix = '_'.join(parts[:3]) if len(parts) >= 3 else name_without_ext
+    return prefix , name_without_ext
 
 def process_translations(human_csv_path, gemini_csv_path, text_column_index=1):
     """
@@ -333,9 +333,9 @@ def process_translations(human_csv_path, gemini_csv_path, text_column_index=1):
     stats_df = pd.DataFrame(stats_data)
     
     # Get output prefix from gemini CSV filename
-    output_prefix = get_output_prefix(gemini_csv_path)
+    output_folder, output_prefix = get_output_prefix(gemini_csv_path)
     
-    return results_df, stats_df, output_prefix
+    return results_df, stats_df, output_folder, output_prefix
 
 # Example usage:
 if __name__ == "__main__":
@@ -344,14 +344,14 @@ if __name__ == "__main__":
     gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\evaluation\\translation-csv\\chatgaiyan_0_shot_gemini.csv"
     
     # Process translations
-    detailed_results, statistics, output_prefix = process_translations(human_csv, gemini_csv, text_column_index=1)
+    detailed_results, statistics, output_folder, output_prefix = process_translations(human_csv, gemini_csv, text_column_index=1)
 
     # Ensure output directory exists
-    os.makedirs("evaluation\\results", exist_ok=True)
+    os.makedirs(f"evaluation\\results\\{output_folder}", exist_ok=True)
     
     # Create output filenames
-    detailed_output = f"evaluation\\results\\{output_prefix}_detailed_metrics.csv"
-    stats_output = f"evaluation\\results\\{output_prefix}_statistics.csv"
+    detailed_output = f"evaluation\\results\\{output_folder}\\{output_prefix}_detailed_metrics.csv"
+    stats_output = f"evaluation\\results\\{output_folder}\\{output_prefix}_statistics.csv"
     
     # Display results
     print("\n" + "=" * 100)
