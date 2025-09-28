@@ -92,10 +92,10 @@ def generate_chatgaiyan(csv_path, num_lines=None):
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
-            append_csv_line('Translation_Output\\Claude\\Translated_Chatgaiyan_0_Shot\\' + path, translate_bangla_to_chatgaiyan(row))
+            append_csv_line('Translation_Output\\Claude\\Translated_Chatgaiyan_10_Shot\\' + path, translate_bangla_to_chatgaiyan(row))
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
 
 if __name__ == "__main__":
-    generate_chatgaiyan(r'Split_Dataset\train3.csv')
+    generate_chatgaiyan(r'BangaCHQ\\temp.csv')

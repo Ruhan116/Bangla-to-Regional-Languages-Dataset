@@ -92,7 +92,7 @@ def generate_chatgaiyan(csv_path, num_lines=None):
                 requests_this_minute = 0
                 minute_window_start = time.time()
             path = extract_after_first_backslash(csv_path)
-            append_csv_line('Translated_Chatgaiyan_5_Shot/' + path, translate_bangla_to_chatgaiyan(row))
+            append_csv_line('Translation_Output\\GPT\\Translated_Chatgaiyan_5_Shot\\' + path, translate_bangla_to_chatgaiyan(row))
             requests_this_minute += 1
             count += 1
             if num_lines is not None and count >= num_lines:
