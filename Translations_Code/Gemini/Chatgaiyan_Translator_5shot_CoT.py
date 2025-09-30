@@ -5,7 +5,7 @@ import csv
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY_1")
+API_KEY = os.getenv("GEMINI_API_KEY_2")
 
 def append_csv_line(csv_path, row):
     dir_name = os.path.dirname(csv_path)
@@ -86,10 +86,10 @@ def generate_chatgaiyan(csv_path, num_lines=None):
         count = 0
         for row in reader:
             path = extract_after_first_backslash(csv_path)
-            append_csv_line('Translated_Chatgaiyan_5_Shot/' + path, translate_bangla_to_chatgaiyan(row))
+            append_csv_line('Translated_Chatgaiyan_5_Shot_CoT/' + path, translate_bangla_to_chatgaiyan(row))
             count += 1
             if num_lines is not None and count >= num_lines:
                 break
 
 if __name__ == "__main__":
-    generate_chatgaiyan(r'Split_Dataset\train3.csv')
+    generate_chatgaiyan(r'Split_Dataset\train2.csv')

@@ -322,6 +322,7 @@ if __name__ == "__main__":
     # Replace these paths with your actual file paths
     human_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\evaluation\\translation-csv\\human\\chatgaiyan_human.csv"
     gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\evaluation\\translation-csv\\chatgaiyan_0_shot\\chatgaiyan_0_shot_gemini.csv"
+    #gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\Translation_Output\\Gemini\\Translated_Sylhet_0_shot\\Sylheti_0_shot_gemini.csv"
     
     # Process translations
     # Parameters:
@@ -335,7 +336,7 @@ if __name__ == "__main__":
         gemini_csv, 
         text_column_index=1,
         id_column_index=0,
-        max_rows=10  # Use None to evaluate all matching rows
+        max_rows=600  # Use None to evaluate all matching rows
     )
     
     # Example 2: Evaluate only first 100 matching rows
