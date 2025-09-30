@@ -321,8 +321,9 @@ def process_translations(human_csv_path, gemini_csv_path, text_column_index=1, i
 if __name__ == "__main__":
     # Replace these paths with your actual file paths
     human_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\evaluation\\translation-csv\\human\\chatgaiyan_human.csv"
-    gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\evaluation\\translation-csv\\chatgaiyan_0_shot\\chatgaiyan_0_shot_gemini.csv"
-    #gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\Translation_Output\\Gemini\\Translated_Sylhet_0_shot\\Sylheti_0_shot_gemini.csv"
+    #gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\Translation_Output\\GPT\\Translated_Chatgaiyan_0_shot\\chatgaiyan_0_shot_gpt.csv"
+    #gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\Translation_Output\\GPT\\Translated_Sylheti_0_shot\\Sylheti_0_shot_gpt.csv"
+    gemini_csv = "D:\\coding\\projects\\Bangla-to-Regional-Languages-Dataset\\Translation_Output\\Qwen\\chatgaiyan_0_shot_qwen.csv"
     
     # Process translations
     # Parameters:
